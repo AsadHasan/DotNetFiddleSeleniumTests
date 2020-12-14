@@ -35,6 +35,10 @@ are defined in `.gitignore` though, so are not version-controlled.
 8. Build information: The tests solution is built in .Net-Core 5.0, and is configured 
 to "Treat warnings as errors".
 
+### CI
+
+These tests are configured to run on GitHub Actions CI: https://github.com/AsadHasan/DotNetFiddleSeleniumTests/actions
+
 ## Run tests locally
 
 Tests can be run in following 2 ways:
@@ -94,5 +98,6 @@ in head-full mode (p.s. when running without grid, these tests are setup to only
 no tests are found and run, then check if your IDE requires NUnit adapter to be manually installed.
 
 ### Todos/room-for-improvements
-It would be good if tests could run in parallel, on all the browsers in the selenium-grid. At 
+1. Tests sometimes hang on CI, need to investigate further.
+2. It would be good if tests could run in parallel, on all the browsers in the selenium-grid. At 
 the moment, they only run on one browser (defined in config) from the grid.
