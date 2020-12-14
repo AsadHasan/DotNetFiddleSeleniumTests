@@ -40,7 +40,7 @@ to "Treat warnings as errors".
 Tests can be run in following 2 ways:
 
 a- Run on selenium-grid, via docker-compose, in Cli/Powershell (requires `dotnet` driver to be installed).
-1. Clone repository locally.
+1. Clone repository locally: (Requires GitHub Cli to be installed) `gh repo clone AsadHasan/DotNetFiddleSeleniumTests`
 2. Choose config: In `tests/config/Config.json`, specify `Browser` (Chrome, Firefox or Opera only) 
 and MaxWait (maximum wait time threshold, in seconds, for WebDriver to wait for expected conditions
 in tests).
@@ -85,7 +85,7 @@ Removing network dotnetfiddleseleniumtests_default
 ```
 
 b- Run without selenium-grid, and on an IDE:
-1. Clone repository locally.
+1. Clone repository locally: `gh repo clone AsadHasan/DotNetFiddleSeleniumTests`
 2. In `tests/config/Config.json`, set `"SeleniumGrid": false` 
 2. Open the project in a C# IDE such as `Visual Studio` or `Rider` (I have only used 
 these 2, things maybe different in other IDEs) and select/click on "Run all Unit tests" (or similar) 
