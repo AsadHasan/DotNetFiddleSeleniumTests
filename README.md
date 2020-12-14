@@ -8,10 +8,10 @@ a- Run default program and check output:
    
 2. Check Output window (“Hello World” text is expected)
 
-b- Select NUnit 3.12.0 package and check it is added:
-1. Select NuGet Packages: nUnit (3.12.0)
+b- (As my name begins with "A") Select NUnit 3.12.0 package and check it is added:
+1. Select NuGet Packages: NUnit (3.12.0)
 
-2. Check that nUnit package is added
+2. Check that NUnit package is added
 
 ## Tests framework architecture
 
@@ -46,7 +46,13 @@ in tests).
 
 b- Run without selenium-grid, and on an IDE:
 1. Clone repository locally.
+2. In `tests/config/Config.json`, set `"SeleniumGrid": false` 
 2. Open the project in a C# IDE such as `Visual Studio` or `Rider` (I have only used 
 these 2, things maybe different in other IDEs) and select/click on "Run all Unit tests" (or similar) 
-option. This _should_ clean and build the solution, find the 2 SpecFlow tests and run them. In case 
+option. This _should_ clean and build the solution, find the 2 SpecFlow tests and run them on Chrome browser 
+in head-full mode (p.s. when running without grid, these tests are setup to only run on Chrome, and expect a Chrome browser to be installed on the machine). In case 
 no tests are found and run, then check if your IDE requires NUnit adapter to be manually installed.
+
+### Todos/room-for-improvements
+It would be good if tests could run in parallel, on all the browsers in the selenium-grid. At 
+the moment, they only run on one browser (defined in config) from the grid.
