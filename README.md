@@ -32,6 +32,8 @@ grid, run the tests via `dotnet test` and then bring down the grid.
 runs also), screenshots (titled with scenario name) are placed in `screenshots` folder, 
 and videos (if using selenium grid) placed in `videos` folder. Contents of both folders
 are defined in `.gitignore` though, so are not version-controlled.
+8. Build information: The tests solution is built in .Net-Core 5.0, and is configured 
+to "Treat warnings as errors".
 
 ## Run tests locally
 
@@ -42,7 +44,45 @@ a- Run on selenium-grid, via docker-compose, in Cli/Powershell (requires `dotnet
 2. Choose config: In `tests/config/Config.json`, specify `Browser` (Chrome, Firefox or Opera only) 
 and MaxWait (maximum wait time threshold, in seconds, for WebDriver to wait for expected conditions
 in tests).
-2. In project root, run: `./RunTestsOnSeleniumGrid.ps1`
+2. In project root, run: `./RunTestsOnSeleniumGrid.ps1`. Sample tests output:
+
+```
+PS /Users/asadhasan/RiderProjects/DotNetFiddleSeleniumTests> ./RunTestsOnSeleniumGrid.ps1
+
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+9      Job9            BackgroundJob   Running       True            localhost             docker-compose -f ./doc…
+  Determining projects to restore...
+  Restored /Users/asadhasan/RiderProjects/DotNetFiddleSeleniumTests/DotNetFiddleSeleniumTests.csproj (in 1.51 sec).
+  SpecFlowFeatureFiles: tests/features/DotNetFiddleSpecs.feature
+-> Using default config
+  SpecFlowGeneratedFiles: tests/features/DotNetFiddleSpecs.feature.cs
+  DotNetFiddleSeleniumTests -> /Users/asadhasan/RiderProjects/DotNetFiddleSeleniumTests/bin/Debug/netcoreapp5.0/DotNetFiddleSeleniumTests.dll
+Test run for /Users/asadhasan/RiderProjects/DotNetFiddleSeleniumTests/bin/Debug/netcoreapp5.0/DotNetFiddleSeleniumTests.dll (.NETCoreApp,Version=v5.0)
+Microsoft (R) Test Execution Command Line Tool Version 16.8.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 1 m 53 s - /Users/asadhasan/RiderProjects/DotNetFiddleSeleniumTests/bin/Debug/netcoreapp5.0/DotNetFiddleSeleniumTests.dll (net5.0)
+Stopping dotnetfiddleseleniumtests_chrome_video_1  ... done
+Stopping dotnetfiddleseleniumtests_opera_video_1   ... done
+Stopping dotnetfiddleseleniumtests_firefox_video_1 ... done
+Stopping dotnetfiddleseleniumtests_opera_1         ... done
+Stopping dotnetfiddleseleniumtests_firefox_1       ... done
+Stopping dotnetfiddleseleniumtests_chrome_1        ... done
+Stopping selenium-hub                              ... done
+Removing dotnetfiddleseleniumtests_chrome_video_1  ... done
+Removing dotnetfiddleseleniumtests_opera_video_1   ... done
+Removing dotnetfiddleseleniumtests_firefox_video_1 ... done
+Removing dotnetfiddleseleniumtests_opera_1         ... done
+Removing dotnetfiddleseleniumtests_firefox_1       ... done
+Removing dotnetfiddleseleniumtests_chrome_1        ... done
+Removing selenium-hub                              ... done
+Removing network dotnetfiddleseleniumtests_default
+```
 
 b- Run without selenium-grid, and on an IDE:
 1. Clone repository locally.
