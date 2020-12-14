@@ -8,7 +8,7 @@ a- Run default program and check output:
    
 2. Check Output window (“Hello World” text is expected)
 
-b- (As my name begins with "A") Select NUnit 3.12.0 package and check it is added:
+b- Select NUnit 3.12.0 package and check it is added:
 1. Select NuGet Packages: NUnit (3.12.0)
 
 2. Check that NUnit package is added
