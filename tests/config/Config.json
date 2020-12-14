@@ -1,0 +1,7 @@
+{
+  "BaseUrl": "https://dotnetfiddle.net/",
+  "SeleniumGrid": true,
+  "SeleniumHubUrl": "http://localhost:4444",
+  "Browser": "Chrome",
+  "MaxWait": 15
+}

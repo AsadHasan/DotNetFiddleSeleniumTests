@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp5.0</TargetFramework>
+
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.0-preview-20201123-03" />
+        <PackageReference Include="NUnit" Version="3.12.0" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+        <PackageReference Include="RestSharp" Version="106.11.8-alpha.0.11" />
+        <PackageReference Include="Selenium.Support" Version="4.0.0-alpha07" />
+        <PackageReference Include="Selenium.WebDriver" Version="4.0.0-alpha07" />
+        <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="88.0.4324.2700-beta" />
+        <PackageReference Include="SpecFlow.NUnit" Version="3.5.14" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="screenshots" />
+      <Folder Include="tests\" />
+      <Folder Include="tests\features\" />
+      <Folder Include="tests\steps\" />
+      <Folder Include="videos" />
+    </ItemGroup>
+    <ItemGroup>
+      <SpecFlowFeatureFiles Update="tests\features\DotNetFiddleSpecs.feature">
+        <Visible>False</Visible>
+        <Generator>SpecFlowSingleFileGenerator</Generator>
+        <LastGenOutput>DotNetFiddleSpecs.feature.cs</LastGenOutput>
+      </SpecFlowFeatureFiles>
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="tests\features\DotNetFiddleSpecs.feature.cs">
+        <DependentUpon>DotNetFiddleSpecs.feature</DependentUpon>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="App.config">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="tests\config\Config.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+</Project>
