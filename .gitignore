@@ -12,3 +12,4 @@ mono_crash.*
 .devcontainer
 *.mp4
 *.png
+.DS_Store
